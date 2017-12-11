@@ -1,0 +1,145 @@
+body {
+	background-color: #8080ff;
+}
+
+em{
+ text-decoration: underline;
+ background: yellow;
+}
+
+/* It's a simply div */
+#cyrillicText {
+  /* We use below options to set specifical behaviour for 
+  different browsers */
+  -moz-appearance: textfield-multiline; /* Firefox */
+  -webkit-appearance: textarea;  /* Safari */
+
+  border: 1px solid gray;
+  font: medium -moz-fixed;
+  /* Scroll-bar will be added if content exceeds div size.
+  In other case scroll-bar is off. */
+  overflow: auto;
+  padding: 2px;
+  /* Element is resizeable in two directions */
+  resize: both;
+  width: 307px;
+  height: 199px;
+  /*Display element as inline element with width and height*/
+  display: inline-block;
+  /*Whitespace is preserved by the browser. 
+  Text will wrap when necessary, and on line breaks */
+  white-space: pre-wrap;
+}
+
+#latinText {
+  padding: 2px;
+  width: 306px;
+  height: 208px;
+  background: orange;
+}
+
+#textAreaWithInner {
+  background-color: #aadec2;
+  padding: 5px;
+  width: 600px;
+  height: 100px;
+}
+
+#textAreaWithCharCode {
+  background-color: #aaddf2;
+  width: 50px;
+  height: 50px;
+  font: 25px arial;
+}
+
+pre{
+    white-space: pre-wrap;
+    background: #EEE;
+}
+
+#prompter {
+	-moz-user-select: none;
+	-webkit-appearance: none;
+	box-sizing: border-box;
+	white-space: nowrap;
+	direction: ltr;
+	text-align: right;
+	left: 10px;
+	top: 40px;
+	position: absolute;
+	display: block;
+  z-index: 1;
+}
+
+#promptsSelector {
+	background-color: red;
+	text-align: right;
+}
+
+
+
+.disableDiv {
+	display: none;
+}
+
+.enableDiv {
+	display: block;
+}
+
+.selected {
+	background-color: #e3e35b;
+}
+
+.selected-word {
+  background-color: gray;
+}
+
+.curWordClass {
+  /*text-decoration: none;*/
+  /*border-bottom: 2px solid #2af;*/
+	text-decoration-color: #2af;
+	text-decoration: underline;
+}
+
+/*class for words*/
+.unknownWordClass {
+/*  text-decoration: none;
+  border-bottom: 1px solid red;*/
+  text-decoration: underline;
+  text-decoration-color: red;
+  /* this settings can add red wavy underline
+  display: inline-block;
+  position:relative;
+  background: url("../img/slaczek.gif") bottom repeat-x;*/
+}
+
+.knownWordClass {
+}
+
+/*part of other word */
+.partiallyKnownWordClass {
+/*  text-decoration: none;
+  border-bottom: 2px solid  blue;*/
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
+
+.wordWithSmallMistakeClass {
+/*  text-decoration: none;
+  border-bottom: 2px solid orange;*/
+  text-decoration: underline;
+  text-decoration-color: green;
+}
+
+
+#autocorrectionInput {
+  transform: scale(2);
+}
+
+#autocorrectionLabel {
+  font-size: 20px;
+  font: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+
