@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>LemApp</title>
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/w3data.js"></script> 
+
+	<script src="assets/js/keysService.js"></script>
+	<script src="assets/js/cyrillicPanelService.js"></script>
+	<script src="assets/js/ctrlCommandService.js"></script>
+	<script src="assets/js/buttonActionService.js"></script>
+	<script src="assets/js/cursorService.js"></script>
+	<script src="assets/js/formatTextService.js"></script>
+	<script src="assets/js/latinTextPanelService.js"></script>
+	<script src="assets/js/prompterPanelService.js"></script>
+	<script src="assets/js/wordsService.js"></script>
+	<script src="assets/js/mainService.js"></script>
+	
+	<script src="assets/js/jquery.caretposition.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/myStyle_4.css">
+</head>
+
+
+<body>
+
+	<div id='container'>
+		<div id='cyrillicText' class='selected' contenteditable></div>
+			<div id="prompter">
+				<div id="promptsSelector">
+			</div>
+		</div>
+		<textarea readonly id="latinText"></textarea>
+		<div id='autocorrectionDiv'>
+			<label id='autocorrectionLabel'>Autocorrection On/Off</label>
+			<input type="checkbox" id='autocorrectionInput' onclick='onClickCheckBox();' checked>
+
+		</div>
+		
+	</div>
+
+	<textarea id='textAreaWithInner'></textarea>
+	<div w3-include-html="cyrillicKeyboard.html"></div> 
+	<script type="text/javascript">w3IncludeHTML()</script>
+	
+</body>
+
+</html>

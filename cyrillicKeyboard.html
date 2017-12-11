@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=8">
+	<meta name="viewport" content="width=1024">
+	
+</head>
+<style>
+	table#layout td#tip {padding-bottom: 3px}
+	iframe#typeit_textbox {height: 660px}
+	#typeit_buttons button.subdued {opacity: 0.7; color: #777}
+	button {height: 30px; width: 50px; font-size: 100%;}
+</style>
+<body class="editor">
+<form name=typeit id=typeit style="width: auto; height: 1000px">
+<table id="typeit_toolbar" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2">
+
+<div id="typeit_editbuttons">
+<span id=typeit_formattingbuttons><button id=bold title="boldface current selection (press Ctrl+B after selecting some text)" type="button" onmousedown="command('bold');" style="font-weight: bold">B</button><button id=italic title="italicize current selection (press Ctrl+I after selecting some text)" type="button" onmousedown="command('italic');"><i>I</i></button><button id=under title="underline current selection (press Ctrl+U after selecting some text)" type="button" onmousedown="command('underline');"><span style="text-decoration: underline">U</span></button><button id=deformat title="remove formatting from current selection (press Ctrl+Space after selecting some text)" type="button" onmousedown="command('RemoveFormat');">R</button> &nbsp;</span>
+<button id=copyall title="copy the contents of the box so you can paste it somewhere else" type="button" style="width: auto" onClick="command('SelectAll'); command('Copy');">Copy all</button><button id=selectall title="select the contents of the box so you can copy &amp; paste it somewhere else" type="button" style="width: auto" onClick="command('SelectAll');">Select all</button>
+&nbsp;
+<button id=undo title="undo last operation" type="button" style="width: auto" onClick="command('Undo');">Undo</button><button id=redo title="redo last undone operation" type="button" style="width: auto" onClick="command('Redo');">Redo</button>
+&nbsp;
+<button id=clear title="remove all text" type="button" style="width: auto" onClick="command('ClearAll');">Clear all</button>
+&nbsp;
+<!--<button id=clear type="button" style="width: auto" onmousedown="selectLastChar_textArea('d', false);">Delete last char</button>-->
+</div>
+
+</td>
+</tr><tr>
+<td>
+
+
+<div id="typeit_buttons">
+<div style="border: solid 1px #ccc; padding: 2px 2px 1px 6px; margin-bottom: 3px"><div class=buttons><div style="font-size: 11px; color: gray; margin-bottom: 3px">Characters accessible with a Ctrl shortcut:</div><span class=narrower><button name="apostrophe" type="button"></button><button name="low quote" type="button" title="Russian-style opening quote"></button><button name="high inverted quote" type="button" title="Russian-style closing quote"></button><button name="high quote" title="English-style closing quote" type="button"></button><button name="straight quote" type="button"></button><button name="<<" type="button"></button><button name=">>" type="button"></button><button name="endash" type="button"></button><button name="emdash" type="button"></button><button name="euro" type="button"></button><button name="numero sign" type="button"></button><button name="@" type="button"></button><button name="+" type="button"></button><button name="=" type="button"></button><button name="combining acute accent" type="button">&#x25CC;&#x0301;</button></span></div></div><div style="background-color: #e5e5e5; padding: 2px 2px 1px 6px"><div style="font-size: 11px; color: gray; margin-bottom: 3px"></div><div class=buttons><button name="1" type="button" title="1" class="subdued" style="margin-left: 51px"></button><button name="2" type="button" title="2" class="subdued"></button><button name="3" type="button" title="3" class="subdued"></button><button name="4" type="button" title="4" class="subdued"></button><button name="5" type="button" title="5" class="subdued"></button><button name="6" type="button" title="6" class="subdued"></button><button name="7" type="button" title="7" class="subdued"></button><button name="8" type="button" title="8" class="subdued"></button><button name="9" type="button" title="9" class="subdued"></button><button name="0" type="button" title="0" class="subdued"></button><button name="dash" type="button" title="-" class="subdued"></button><button name="tvyordy znak cyr" type="button" title="="></button></div><div class=buttons><button name="ya cyr" type="button" title="Q" style="margin-left: 51px"></button><button name="sh cyr" type="button" title="W"></button><button name="e cyr" type="button" title="E"></button><button name="r cyr" type="button" title="R"></button><button name="t cyr" type="button" title="T"></button><button name="yy cyr" type="button" title="Y"></button><button name="u cyr" type="button" title="U"></button><button name="y cyr" type="button" title="I"></button><button name="o cyr" type="button" title="O"></button><button name="p cyr" type="button" title="P"></button><button name="yu cyr" type="button" title="["></button><button name="ye cyr" type="button" title="]"></button><button name="backslash" type="button" title="\"></button></div><div class=buttons><button name="a cyr" type="button" title="A" style="margin-left: 60px"></button><button name="s cyr" type="button" title="S"></button><button name="d cyr" type="button" title="D"></button><button name="f cyr" type="button" title="F"></button><button name="h cyr" type="button" title="G"></button><button name="ch cyr" type="button" title="H"></button><button name="j cyr" type="button" title="J"></button><button name="k cyr" type="button" title="K"></button><button name="l cyr" type="button" title="L"></button><button name="cz cyr" type="button" title=";"></button><button name="myagkiy znak cyr" type="button" title="'"></button></div><div class=buttons><button name="z cyr" type="button" title="Z" style="margin-left: 79px"></button><button name="zh cyr" type="button" title="X"></button><button name="c cyr" type="button" title="C"></button><button name="v cyr" type="button" title="V"></button><button name="b cyr" type="button" title="B"></button><button name="n cyr" type="button" title="N"></button><button name="m cyr" type="button" title="M"></button><button name="comma" type="button" title=",">;</button><button name="dot" type="button" title=".">:</button></div>	</div>
+</td>
+<td id="tip"><div style="margin-bottom: 1px"><kbd>Shift&#x200A;+&#x200A;click</kbd> button for upper case.</div><div><span class="popuphelp kbdhelp" title="click for help" data-popup_title="<p>Press the key which sounds like the Russian letter you want to type. For example, to type
+		<span class=char>&#x0434;</span>, press <kbd>D</kbd>. Some characters need a <kbd>Ctrl</kbd> shortcut, e.g. to
+        type <span class=char>=</span>, press <kbd>Ctrl&#x200A;+&#x200A;=</kbd> or <kbd>Ctrl&#x200A;+&#x200A;0</kbd>.</p>
+        <p>If your keyboard layout is not US English, you may have to use alternative keyboard shortcuts for some letters, e.g.
+		<kbd>Ctrl&#x200A;+&#x200A;U</kbd> for <span class=char>&#x044E;</span>.</p>
+        <p>Stop the mouse over each button to learn its keyboard shortcut(s).
+		Press <kbd>Ctrl&#x200A;+&#x200A;Enter</kbd> to turn the Russian layout on and off.</p>"><img src="http://static.typeit.org/kbd.png?70" alt=""><span class=link>Right alt for second set of letters</span></span></div></td></tr>
+</table>
+
+</body>
+
+</html>
